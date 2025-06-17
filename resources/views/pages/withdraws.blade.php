@@ -269,7 +269,7 @@
                     <input type="hidden" id="hashedMessageScript" name="hashedMessageScript">
                     <input type="hidden" id="walletAddressScript" name="walletAddressScript">
                     <div class="flex items-center justify-center mt-6 relative group max-w-fit mx-auto">
-                        <button class="w-full relative inline-block p-px font-semibold leading-none text-white cursor-pointer rounded-sm" type="submit">
+                        <button class="w-full relative inline-block p-px font-semibold leading-none text-white cursor-pointer rounded-sm" type="button" onclick="processWithdraw(this);">
                             <span class="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-500 via-pink-500 to-blue-500 p-[2px]"></span>
                             <span class="relative z-10 block px-6 py-3 rounded-sm">
                                 <div class="relative z-10 flex items-center space-x-2 justify-center">
