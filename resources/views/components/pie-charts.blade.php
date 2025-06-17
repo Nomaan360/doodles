@@ -29,7 +29,7 @@
 
 <script>
     const chartConfig = {
-        series: [{{$data['user']['roi_income']}}, {{$data['user']['level_income']}}, {{$data['user']['royalty']}}, {{$data['user']['reward']}}, {{$data['user']['direct_income']}}],
+        series: [{{$data['user']['roi_income']}}, {{$data['user']['level_income']}}, {{$data['user']['royalty']}}, {{$data['user']['reward']}}, {{$data['user']['direct_income']}}, {{$data['user']['leadership_comission']}}],
         chart: {
             type: "pie",
             width: 280,
@@ -48,7 +48,7 @@
         legend: {
             show: false,
         },
-        labels: ["Roi Income", "Level Income", "Royalty Income", "Reward Income", "Direct Income"], // Add the portion names here
+        labels: ["Roi Income", "Level Income", "Royalty Income", "Reward Income", "Direct Income", "Leadership Comission"], // Add the portion names here
     };
 
     const chart = new ApexCharts(document.querySelector("#pie-chart"), chartConfig);

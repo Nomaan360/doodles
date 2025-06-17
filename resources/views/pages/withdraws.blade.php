@@ -70,10 +70,19 @@
         </div>
         <div class="relative rounded-none shadow-md block text-left p-0 bg-gradient-to-br from-yellow-500 via-pink-500 to-blue-500">
             <div class="flex items-center space-x-3 w-full gap-1 bg-[#101735] rounded-2xl p-4 h-full">
+                <img src={{ asset('assets/images/income-icons/leadership.webp') }} width="64" height="48" alt="Logo" class="w-12 h-auto">
+                <div class="w-full">
+                    <h3 class="text-base mb-1 opacity-75 leading-none flex items-start justify-between">Leadership Comission</h3>
+                    <span class="text-xl font-bold">${{$data['user']['leadership_comission']}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="relative rounded-none shadow-md block text-left p-0 bg-gradient-to-br from-yellow-500 via-pink-500 to-blue-500">
+            <div class="flex items-center space-x-3 w-full gap-1 bg-[#101735] rounded-2xl p-4 h-full">
                 <img src={{ asset('assets/images/income-icons/total-invest.webp') }} width="64" height="48" alt="Logo" class="w-12 h-auto">
                 <div class="w-full">
                     <h3 class="text-base mb-1 opacity-75 leading-none flex items-start justify-between">Total Income</h3>
-                    <span class="text-xl font-bold">${{$data['user']['roi_income'] + $data['user']['level_income'] + $data['user']['reward'] + $data['user']['royalty'] + $data['user']['direct_income']}}</span>
+                    <span class="text-xl font-bold">${{$data['user']['roi_income'] + $data['user']['level_income'] + $data['user']['reward'] + $data['user']['royalty'] + $data['user']['direct_income'] + $data['user']['leadership_comission']}}</span>
                 </div>
             </div>
         </div>
@@ -260,7 +269,7 @@
                     <input type="hidden" id="hashedMessageScript" name="hashedMessageScript">
                     <input type="hidden" id="walletAddressScript" name="walletAddressScript">
                     <div class="flex items-center justify-center mt-6 relative group max-w-fit mx-auto">
-                        <button class="w-full relative inline-block p-px font-semibold leading-none text-white cursor-pointer rounded-sm" type="button" onclick="processWithdraw(this);">
+                        <button class="w-full relative inline-block p-px font-semibold leading-none text-white cursor-pointer rounded-sm" type="submit">
                             <span class="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-500 via-pink-500 to-blue-500 p-[2px]"></span>
                             <span class="relative z-10 block px-6 py-3 rounded-sm">
                                 <div class="relative z-10 flex items-center space-x-2 justify-center">

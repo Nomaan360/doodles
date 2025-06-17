@@ -67,7 +67,7 @@ if (!function_exists('updateReverseSize')) {
 if (!function_exists('getBalance')) {
     function getBalance($user_id)
     {
-        $investments = usersModel::selectRaw("(roi_income + level_income + royalty + reward + direct_income) as balance")->where(['id' => $user_id])->get()->toArray();
+        $investments = usersModel::selectRaw("(roi_income + level_income + royalty + reward + direct_income + leadership_comission) as balance")->where(['id' => $user_id])->get()->toArray();
 
         $available_withdraw_balance = 0;
         $withdraw_balance = 0;

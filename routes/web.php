@@ -155,6 +155,7 @@ Route::any('ZG9vZGxlcw/income-geneated-report-process-excel', [loginController::
 Route::any('ZG9vZGxlcw/user-details', [BackendusersController::class, 'userDetails'])->name('userDetails')->middleware('adminsession');
 Route::any('ZG9vZGxlcw/user-export-report', [BackendusersController::class, 'userExportReport'])->name('userExportReport')->middleware('adminsession');
 Route::any('ZG9vZGxlcw/transfer-balance-report', [BackendusersController::class, 'transferBalanceReport'])->name('transferBalanceReport')->middleware('adminsession');
+Route::any('ZG9vZGxlcw/update-leadership-comission', [BackendusersController::class, 'updateLeadershipComission'])->name('updateLeadershipComission')->middleware('adminsession');
 
 Route::get('ZG9vZGxlcw/withdraw-report', function (Request $request) {
     return view('withdraw_report');

@@ -245,7 +245,7 @@
                                 <img src={{ asset('assets/images/icons/total-income-icon.webp') }} width="64" height="48" alt="Logo" class="w-8 sm:w-12 h-auto max-h-8 sm:max-h-12">
                                 <div class="w-full">
                                     <h3 class="text-sm sm:text-base mb-2 opacity-75 leading-none">Total Income</h3>
-                                    <span class="text-sm sm:text-base">{{$data['user']['roi_income'] + $data['user']['level_income'] + $data['user']['royalty'] + $data['user']['reward'] + $data['user']['direct_income']}}</span>
+                                    <span class="text-sm sm:text-base">{{$data['user']['roi_income'] + $data['user']['level_income'] + $data['user']['royalty'] + $data['user']['reward'] + $data['user']['direct_income']  + $data['user']['leadership_comission']}}</span>
                                 </div>
                             </div>
                             <div class="p-4 flex items-center gap-4 rounded-xl w-full mx-auto border border-[#16204a] bg-[#16204a] overflow-hidden relative">

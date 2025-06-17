@@ -1427,4 +1427,43 @@ class usersController extends Controller
 
         return is_mobile($type, "transfer_balance_report", $res, "view");
     }
+
+    public function updateLeadershipComission(Request $request)
+    {
+        $type = $request->input('type');
+        $user_id = $request->input('user_id');        
+        $leader_comission = $request->input('leader_comission');
+        if ($leader_comission>500) {
+            $res['status_code'] = 0;
+            $res['message'] = "Minimum 500 can be entered.";
+
+            return redirect()->back()->with('data', $res);
+        }
+
+
+        if($user_id > 0)
+        {
+            usersModel::where(['id' => $user_id])->update(['leadership_comission' => DB::raw('leadership_comission + ' . $leader_comission)]);
+
+            $roi = array();
+            $roi['user_id'] = $user_id;
+            $roi['amount'] = $leader_comission;
+            $roi['tag'] = "leader-comission";
+            $roi['refrence'] = 'By Admin';
+            $roi['created_on'] = date('Y-m-d H:i:s');
+
+            earningLogsModel::insert($roi);
+
+            $res['status_code'] = 1;
+            $res['message'] = "Leadership Comission Worth $".$leader_comission." Added Successfully";
+        }else
+        {
+            $res['status_code'] = 1;
+            $res['message'] = "Something Went Wrong.";
+        }
+
+
+        return redirect()->back()->with('data', $res);
+    }
+
 }

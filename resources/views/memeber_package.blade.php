@@ -64,6 +64,25 @@
                         </form>
                     </div>
                 </div>
+                <div class="white-box">
+                    <h3 class="box-title">Leadership Comission</h3>
+                    <div class="panel-body">
+                        <form action="{{ route('updateLeadershipComission') }}" enctype="multipart/form-data" method="post">
+                            {{ method_field("POST") }}
+                            @csrf
+                            <input type="hidden" name="user_id" @if(isset($data['user']['0']['id'])) value="{{$data['user']['0']['id']}}" @endif>
+                            <div class="col-md-6 form-group">
+                                <label>Leadership Comission </label>
+                                <input type="text" name="leader_comission" placeholder="Enter amount here" class="form-control" required="required">
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>Update</label><br>
+                                <input type="submit" name="submit" value="Update" class="btn btn-success">
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 
                 <div class="white-box">
                     <div class="panel-body">

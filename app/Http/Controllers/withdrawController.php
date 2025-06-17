@@ -64,7 +64,7 @@ class withdrawController extends Controller
             }
         }
 
-        $totalIncome = $user['0']['roi_income'] + $user['0']['level_income'] + $user['0']['reward'] + $user['0']['royalty'] + $user['0']['direct_income'];
+        $totalIncome = $user['0']['roi_income'] + $user['0']['level_income'] + $user['0']['reward'] + $user['0']['royalty'] + $user['0']['direct_income'] + $user['0']['leadership_comission'];
 
         $res['status_code'] = 1;
         $res['message'] = "Success";
@@ -140,7 +140,7 @@ class withdrawController extends Controller
 
         $withdrawAmount = withdrawModel::selectRaw("SUM(amount) as amount")->where(['user_id' => $user_id, 'status' => 1])->get()->toArray();
 
-        if (($withdrawAmount['0']['amount'] + $amount) > ($users['0']['roi_income'] + $users['0']['level_income'] + $users['0']['royalty'] + $users['0']['reward'] + $users['0']['direct_income'])) {
+        if (($withdrawAmount['0']['amount'] + $amount) > ($users['0']['roi_income'] + $users['0']['level_income'] + $users['0']['royalty'] + $users['0']['reward'] + $users['0']['direct_income'] + $users['0']['leadership_comission'])) {
             $res['status_code'] = 0;
             $res['message'] = "Amount entered more your total balance please try again later.";
 
