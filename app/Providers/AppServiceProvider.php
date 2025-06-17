@@ -24,16 +24,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        \Illuminate\Support\Facades\URL::forceScheme('https');
+        // \Illuminate\Support\Facades\URL::forceScheme('https');
 
-        View::composer('*', function ($view) {
-            if (session()->has('user_id')) {
-                $user_id = session('user_id');
+        // View::composer('*', function ($view) {
+        //     if (session()->has('user_id')) {
+        //         $user_id = session('user_id');
 
-                $userData = usersModel::where('id', $user_id)->first();
+        //         $userData = usersModel::where('id', $user_id)->first();
                 
-                $view->with('provider_user', $userData);
-            }
-        });
+        //         $view->with('provider_user', $userData);
+        //     }
+        // });
     }
 }
