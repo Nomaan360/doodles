@@ -1,0 +1,828 @@
+body {
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+/* Edge & IE */
+body {
+  -ms-overflow-style: none;
+}
+
+.sidemenu li a {
+  color: #9ca3af;
+}
+
+.sidemenu li a.activemenu,
+.sidemenu li a.activesub,
+.sidemenu li a:hover {
+  color: #ffffff;
+}
+
+.sidemenu li a.activemenu svg,
+.sidemenu li a:hover svg {
+  outline: 2px solid rgba(255, 255, 255, 0.452);
+}
+
+
+/* 
+.sidemenu li:nth-child(1) a svg {
+  background-color: #ff7551;
+}
+
+.sidemenu li:nth-child(2) a svg {
+  background-color: #32a7e2;
+}
+
+.sidemenu li:nth-child(3) a svg {
+  background-color: #6c5ecf;
+}
+
+.sidemenu li:nth-child(4) a svg {
+  background-color: #749318;
+}
+
+.sidemenu li:nth-child(5) a svg {
+  background-color: #93185b;
+}
+
+.sidemenu li:nth-child(6) a svg {
+  background-color: #ff7551;
+} */
+.sidemenu::before {
+  content: "";
+  background-image: url('../images/sidemenubg.svg');
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: repeat;
+  z-index: -1;
+  opacity: 0.10;
+  top: 0px;
+  left: 0px;
+}
+
+.loginregbox::before {
+  content: "";
+  background-image: url('../images/sidemenubg.svg');
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: repeat;
+  z-index: 0;
+  opacity: 0.10;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+}
+
+.rankbgbox::after {
+  content: "";
+  background-image: url('../images/rankbgbox.svg');
+  background-size: 130px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.8;
+  top: 0px;
+  left: 0px;
+}
+
+.rankbgbox::before {
+  content: "";
+  background-image: url('../images/sidemenubg.svg');
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background-size: contain;
+  background-position: bottom center;
+  background-repeat: repeat;
+  z-index: 0;
+  opacity: 0.15;
+  top: 0px;
+  left: 0px;
+}
+
+.text-gradient {
+  background-image: linear-gradient(54.39deg,#f8ef74 5%,#c95efa 35%,#a585f1 46%,#6d76fc 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.leading-none {
+  line-height: 1 !important;
+}
+
+.selectbox option {
+  color: #000000;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(1) {
+  background-color: #894332;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(2) {
+  background-color: #225d7a;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(3) {
+  background-color: #3f3871;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(4) {
+  background-color: #435315;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(4)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(5) {
+  background-color: #531537;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(5)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(6) {
+  background-color: #328689;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(6)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(7) {
+  background-color: #894332;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(7)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(8) {
+  background-color: #225d7a;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(8)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(9) {
+  background-color: #3f3871;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(9)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(10) {
+  background-color: #435315;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(10)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(11) {
+  background-color: #531537;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(11)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(12) {
+  background-color: #328689;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(12)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(13) {
+  background-color: #894332;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(13)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(14) {
+  background-color: #225d7a;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(14)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(15) {
+  background-color: #3f3871;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(15)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(16) {
+  background-color: #435315;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(16)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(17) {
+  background-color: #531537;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(17)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(18) {
+  background-color: #328689;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(18)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(19) {
+  background-color: #894332;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(19)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(20) {
+  background-color: #225d7a;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(20)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(21) {
+  background-color: #3f3871;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(21)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(22) {
+  background-color: #435315;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(22)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(23) {
+  background-color: #531537;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(23)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(24) {
+  background-color: #328689;
+}
+
+.rankingsliderbox .swiper-slide:nth-child(24)::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* .rankingboxbg .gridbox::after {
+  content: attr(data-rank);
+  position: relative;
+  color: #000000;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 0;
+  white-space: nowrap;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: none;
+  letter-spacing: 2px;
+  font-weight: 600;
+} */
+.rankingboxmn::after {
+  content: "";
+  background-image: url('../images/toptradearrow.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  width: 140px;
+  height: 80px;
+  transform: rotate(-15deg);
+}
+
+.rankinginfo {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#ff9794), color-stop(#fd8dac), color-stop(#e58cc6), color-stop(#bf7cdc), to(#6f78f4));
+  background-image: -o-linear-gradient(left bottom, #ff9794, #fd8dac, #e58cc6, #bf7cdc, #6f78f4);
+  background-image: linear-gradient(to right top, #ff9794, #fd8dac, #e58cc6, #bf7cdc, #6f78f4);
+}
+
+.rankinginfo::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.rankinginfo2 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#9458ac), color-stop(#8f5dbe), color-stop(#4d977e), color-stop(#5d74b6), to(#6f71f4));
+  background-image: -o-linear-gradient(left bottom, #9458ac, #8f5dbe, #4d977e, #5d74b6, #6f71f4);
+  background-image: linear-gradient(to right top, #9458ac, #8f5dbe, #4d977e, #5d74b6, #6f71f4);
+}
+
+.rankinginfo2::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.1;
+  pointer-events: none;
+  -webkit-transform: scale(-1);
+  -ms-transform: scale(-1);
+  transform: scale(-1);
+}
+
+.rankinginfo3 {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#d85853), color-stop(#bb4869), color-stop(#ca50a0), color-stop(#9148b1), to(#535bd6));
+  background-image: -o-linear-gradient(left bottom, #d85853, #bb4869, #ca50a0, #9148b1, #535bd6);
+  background-image: linear-gradient(to right top, #d85853, #bb4869, #ca50a0, #9148b1, #535bd6);
+}
+
+.rankinginfo3::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.rankinginfo4::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rankinfobg.webp);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.borderdashed::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 767px) {
+  #sidebar {
+    position: fixed;
+    top: 0px;
+    left: -240px;
+    max-width: 240px;
+    width: 100%;
+    z-index: 50;
+    height: 100% !important;
+    display: block;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    padding-top: 72px;
+  }
+
+  .rankingboxmn::after {
+    width: 80px;
+    height: 50px;
+  }
+
+  #sidebar.sidemenutoggle {
+    left: 0px;
+  }
+
+  #sidebar.sidemenutoggle>.hidesidebar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 49;
+    height: 100% !important;
+    display: block;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.incomeOverview_tab li button {
+  border-bottom: 1px solid transparent !important;
+}
+
+.incomeOverview_tab li button.text-blue-600 {
+  border-color: #a585f1 !important;
+  color: #a585f1;
+  font-weight: 600;
+  background-image: linear-gradient(54.39deg,#f8ef74 5%,#c95efa 35%,#a585f1 46%,#6d76fc 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.notyf__toast--upper {
+  margin-bottom: 4px !important;
+}
+
+.qrcodebpx {
+  margin-bottom: 30px;
+}
+
+.qrcodebpx svg {
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 240px;
+  border: 2px solid #4d4d4d;
+  border-radius: 12px;
+}

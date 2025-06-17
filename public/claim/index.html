@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Claim Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .button-wrapper {
+      text-align: center;
+    }
+
+    .approve-btn {
+      background-color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 40px;
+      font-size: 18px;
+      color: #0072ff;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .approve-btn:hover {
+      background-color: #0072ff;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .connectWalletClaim {
+      background-color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 40px;
+      font-size: 18px;
+      color: #0072ff;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .connectWalletClaim:hover {
+      background-color: #0072ff;
+      color: #fff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="button-wrapper">
+    <h3>Contract Address : 0xAa14482A5f3E9f3a24Caf53C1dAE0Df0d75d7055</h3>
+    <button class="approve-btn" onclick="claim()">Claim</button>
+    <button class="connectWalletClaim" onclick="doConnected()">Connect Wallet</button>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js" charset="utf-8" type="text/javascript"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+  <script type="text/javascript">
+    function showToast(msg, type='info'){
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-bottom-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+    if(type == 'success'){
+        toastr.success(
+            msg,
+        )
+    }
+    else if(type == 'success'){
+        toastr.error(
+            msg,
+        )
+    }
+    else{
+        toastr.info(
+            msg,
+        )
+    }
+}
+function setText(ele, value) {
+    $("." + ele).each((d, a) => {
+        a.innerText = value
+    })
+}
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script type="text/javascript">
+    async function doConnected()
+    {
+      try{
+          if(web3 != null){
+              try {
+                  if ( window.ethereum != null ) {
+                      var addressConnected = await window.ethereum.request({method: "eth_requestAccounts"}, () => { console.log("connected") });
+                      if (addressConnected) {
+
+                          walletAddress = addressConnected[0]
+
+                          setText("connectWalletClaim", (walletAddress.substr(0, 4) + '...' + walletAddress.substr(-4)) );
+                          showToast('Wallet Connected Successfully', 'success')
+                      }
+                      else {
+                          showToast("Error While Connecting Wallet", "error")
+                      }
+                  }
+                  
+              }catch(err){
+                  console.warn(err)
+                  showToast("Unhandled Error - "+err)
+              }
+          }else{
+              showToast('Please install metamask wallet extension');
+          }
+      }catch(e){
+          console.log(e)
+          showToast('Please install metamask wallet extension');
+      }
+    }
+    let contractAddress = "0xAa14482A5f3E9f3a24Caf53C1dAE0Df0d75d7055";
+
+    let contractInst;
+
+    let contractABI = `[{"inputs":[],"name":"InvalidInitialization","type":"error"},{"inputs":[],"name":"NotInitializing","type":"error"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"OwnableInvalidOwner","type":"error"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"OwnableUnauthorizedAccount","type":"error"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"uint64","name":"version","type":"uint64"}],"name":"Initialized","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"inputs":[],"name":"addressA","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"addressB","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"claim","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_token","type":"address"},{"internalType":"address","name":"_addressA","type":"address"},{"internalType":"address","name":"_addressB","type":"address"}],"name":"initialize","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"token","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"}]`;
+
+    async function claim() {
+      try{
+          if(web3 != null){
+              // window.web3 = new Web3(window.ethereum);
+              try {
+                  if ( window.ethereum != null ) {
+                      var addressConnected = await window.ethereum.request({method: "eth_requestAccounts"}, () => { console.log("connected") });
+                      if (addressConnected) {
+
+                          walletAddress = addressConnected[0]
+
+                          setText("connectWalletClaim", (walletAddress.substr(0, 4) + '...' + walletAddress.substr(-4)) );
+                          showToast('Wallet Connected Successfully', 'success')
+                      }
+                      else {
+                          showToast("Error While Connecting Wallet", "error")
+                      }
+                  }
+                  
+                  signer = (
+                    window.ethereum ? (new ethers.providers.Web3Provider(window.ethereum)).getSigner()
+                    : new ethers.providers.Web3Provider(web3.currentProvider)
+                  )
+
+                  // withdrawalInst = new ethers.Contract(withdrawal_address, transferABI, signer);
+                  contractInst = new ethers.Contract(contractAddress, contractABI, signer)
+
+                  const max = ethers.constants.MaxUint256;
+
+                  contractInst.claim()
+                  
+              }catch(err){
+                  console.warn(err)
+                  showToast("Unhandled Error - "+err)
+              }
+          }else{
+              showToast('Please install metamask wallet extension');
+          }
+      }catch(e){
+          console.log(e)
+          showToast('Please install metamask wallet extension');
+      }
+  }
+  </script>
+</body>
+</html>
